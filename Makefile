@@ -1,7 +1,7 @@
 .PHONY: help test
 
-VERSION ?= `cat VERSION`
-IMAGE_NAME ?= bitwalker/s2i-alpine-base
+VERSION ?= 7.0.7
+IMAGE_NAME ?= codecasts/s2i-caddy-fpm7
 
 help:
 	@echo "$(IMAGE_NAME):$(VERSION)"
@@ -11,7 +11,7 @@ test: ## Test the Docker image
 	docker run --rm -it $(IMAGE_NAME):$(VERSION)
 
 build: ## Rebuild the Docker image
-	docker build --force-rm -t $(IMAGE_NAME):$(VERSION) -t $(IMAGE_NAME):latest .
+	docker build --no-cache --force-rm -t $(IMAGE_NAME):$(VERSION) -t $(IMAGE_NAME):latest .
 
 release: build ## Rebuild and release the Docker image to Docker Hub
 	docker push $(IMAGE_NAME):$(VERSION)
