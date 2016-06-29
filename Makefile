@@ -11,7 +11,7 @@ test: ## Test the Docker image
 	docker run --rm -it $(IMAGE_NAME):$(VERSION)
 
 build: ## Rebuild the Docker image
-	docker build --no-cache --force-rm -t $(IMAGE_NAME):$(VERSION) -t $(IMAGE_NAME):latest .
+	docker build --force-rm -t $(IMAGE_NAME):$(VERSION) -t $(IMAGE_NAME):latest .
 
 release: build ## Rebuild and release the Docker image to Docker Hub
 	docker push $(IMAGE_NAME):$(VERSION)
