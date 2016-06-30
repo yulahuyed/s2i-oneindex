@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-MAINTAINER Paul Schoenfelder <paulschoenfelder@gmail.com>
+MAINTAINER Diego Hernandes <diego@hernandev.com>
 
 LABEL \
   # Location of the STI scripts inside the image
