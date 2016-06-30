@@ -1,7 +1,7 @@
 .PHONY: help test
 
 VERSION ?= 7.0.7
-IMAGE_NAME ?= codecasts/s2i-caddy-fpm7
+IMAGE_NAME ?= codecasts/s2i-laravel
 
 help:
 	@echo "$(IMAGE_NAME):$(VERSION)"
