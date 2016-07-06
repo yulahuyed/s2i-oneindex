@@ -100,7 +100,7 @@ EXPOSE 8080
 # can execute relative to this path
 WORKDIR ${HOME}
 
-USER 1001
+USER default
 
 CMD ["base-usage"]
 
