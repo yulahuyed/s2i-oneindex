@@ -1,6 +1,6 @@
 .PHONY: help test
 
-VERSION ?= 7.0.7
+VERSION ?= 7.0.8
 IMAGE_NAME ?= codecasts/s2i-laravel
 
 help:
