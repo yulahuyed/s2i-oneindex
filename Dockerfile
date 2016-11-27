@@ -1,6 +1,6 @@
-FROM alpine:edge
+FROM alpine:latest
 
-MAINTAINER Diego Hernandes <diego@hernandev.com>
+MAINTAINER Paul Schoenfelder <paulschoenfelder@gmail.com>
 # Modification France
 
 LABEL \
@@ -30,16 +30,15 @@ RUN mkdir -p ${HOME} && \
     mkdir -p /usr/libexec/s2i && \
     adduser -s /bin/sh -u 1001 -G root -h ${HOME} -S -D default && \
     chown -R 1001:0 /opt/app-root && \
-    echo 'http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
-    echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-    echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
+    echo 'http://nl.alpinelinux.org/alpine/3.5/community' >> /etc/apk/repositories && \
+    echo "http://nl.alpinelinux.org/alpine/3.5/releases" >> /etc/apk/repositories && \
+    echo "http://nl.alpinelinux.org/alpine/3.5/main" >> /etc/apk/repositories && \
     apk -U upgrade && \
     apk add --no-cache --update  \
         bash \
         curl \ 
         wget \
         tar \
-        openssl \
         unzip \
         findutils \
         git \
@@ -48,6 +47,25 @@ RUN mkdir -p ${HOME} && \
         lsof \
         patch \
         caddy \
+        # ajout
+        libcurl \
+        libxml2 \
+        libxslt \
+        openssl-dev \
+        zlib-dev \
+        make \
+        automake \ 
+        gcc \ 
+        g++ \ 
+        binutils-gold \
+        linux-headers \
+        paxctl \
+        libgcc \
+        libstdc++ \
+        python \
+        gnupg \
+        ncurses-libs \
+        # fin ajout
         ca-certificates \
         php7 \
         php7-xml \
