@@ -62,6 +62,7 @@ RUN mkdir -p ${HOME} && \
         php7-dom \    
         php7-gd \
         php7-intl \
+        php7-imap \
         php7-mysqlnd \    
         php7-pdo \
         php7-pdo_mysql \
