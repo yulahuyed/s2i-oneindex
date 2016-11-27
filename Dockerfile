@@ -1,6 +1,7 @@
 FROM alpine:edge
 
 MAINTAINER Diego Hernandes <diego@hernandev.com>
+# Modification France
 
 LABEL \
   # Location of the STI scripts inside the image
