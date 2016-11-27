@@ -1,6 +1,6 @@
-## codecasts/s2i-caddy-fpm7
+## Source to Image pour Opnshift
 
-Openshift s2i image for running Laravel (or other php projects).
+Openshift s2i image mise à jour.
 
 - Alpine Linux
 - PHP-FPM 7
