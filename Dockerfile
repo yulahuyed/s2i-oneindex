@@ -19,7 +19,7 @@ ENV \
   REFRESHED_AT=2016-04-7T14:27
 
 # Environments
-ENV TIMEZONE=America/Sao_Paulo \
+ENV TIMEZONE=Europe/Paris \
     PHP_MEMORY_LIMIT=256M \
     MAX_UPLOAD=100M \
     PHP_MAX_FILE_UPLOAD=200 \
