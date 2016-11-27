@@ -30,14 +30,16 @@ RUN mkdir -p ${HOME} && \
     mkdir -p /usr/libexec/s2i && \
     adduser -s /bin/sh -u 1001 -G root -h ${HOME} -S -D default && \
     chown -R 1001:0 /opt/app-root && \
-    echo 'http://dl-4.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
-    echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+    echo 'http://nl.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories && \
+    echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+    echo "http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
     apk -U upgrade && \
     apk add --no-cache --update  \
         bash \
         curl \ 
         wget \
         tar \
+        openssl \
         unzip \
         findutils \
         git \
