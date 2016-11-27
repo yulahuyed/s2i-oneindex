@@ -30,9 +30,9 @@ RUN mkdir -p ${HOME} && \
     mkdir -p /usr/libexec/s2i && \
     adduser -s /bin/sh -u 1001 -G root -h ${HOME} -S -D default && \
     chown -R 1001:0 /opt/app-root && \
-    echo 'http://nl.alpinelinux.org/alpine/3.5/community' >> /etc/apk/repositories && \
-    echo "http://nl.alpinelinux.org/alpine/3.5/releases" >> /etc/apk/repositories && \
-    echo "http://nl.alpinelinux.org/alpine/3.5/main" >> /etc/apk/repositories && \
+    echo 'http://nl.alpinelinux.org/alpine/v3.5/community' >> /etc/apk/repositories && \
+    echo "http://nl.alpinelinux.org/alpine/v3.5/releases" >> /etc/apk/repositories && \
+    echo "http://nl.alpinelinux.org/alpine/v3.5/main" >> /etc/apk/repositories && \
     apk -U upgrade && \
     apk add --no-cache --update  \
         bash \
