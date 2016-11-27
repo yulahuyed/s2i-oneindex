@@ -1,4 +1,4 @@
-## Source to Image pour Opnshift
+## Source to Image pour Openshift
 
 Openshift s2i image mise à jour.
 
