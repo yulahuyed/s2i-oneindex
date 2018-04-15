@@ -7,7 +7,7 @@ sed -i "s/yhiblog/$DB_USER/g" /opt/app-root/src/public/tt-rss/config.php
 sed -i "s/yhiblog/$DB_NAME/g" /opt/app-root/src/public/tt-rss/config.php
 sed -i "s/yhiblog/$DB_PASS/g" /opt/app-root/src/public/tt-rss/config.php
 sed -i "s/5432/$DB_PORT/g" /opt/app-root/src/public/tt-rss/config.php
-sed -i "s/https:\/\/shui.azurewebsites.net\//$SELF_URL_PATH/g" /opt/app-root/src/public/tt-rss/config.php
+sed -i "s#https://shui.azurewebsites.net/#$SELF_URL_PATH#g" /opt/app-root/src/public/tt-rss/config.php
 
 
 echo "*/5 * * * * php /opt/app-root/src/tt-rss/update.php --feeds --quiet" > /opt/app-root/src/public/tt-rss/crontab
