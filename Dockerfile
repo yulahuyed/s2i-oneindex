@@ -104,8 +104,7 @@ RUN mkdir -p ${HOME} && \
 # Copy executable utilities
 ADD basefs /
 
-RUN ln -s /usr/bin/php7 /usr/bin/php && \
-    ln -s /usr/sbin/php-fpm7 /usr/sbin/php-fpm
+RUN ln -s /usr/sbin/php-fpm7 /usr/sbin/php-fpm
 
 RUN fix-permissions /opt/app-root && \
     fix-permissions /opt/bin/start.sh && \
