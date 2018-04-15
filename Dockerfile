@@ -108,7 +108,7 @@ RUN mkdir -p ${HOME} && \
 ADD basefs /
 
 RUN git clone https://tt-rss.org/git/tt-rss.git /opt/app-root/src/public/tt-rss
-ADD config.php /opt/app-root/src/public/tt-rss/config.php
+ADD *.php /opt/app-root/src/public/tt-rss/
 RUN git clone https://github.com/DigitalDJ/tinytinyrss-fever-plugin /opt/app-root/src/public/tt-rss/plugins.local/fever
 RUN wget -O /opt/app-root/src/public/tt-rss/supercronic https://github.com/aptible/supercronic/releases/download/v0.1.5/supercronic-linux-amd64
 RUN chmod +x /opt/app-root/src/public/tt-rss/supercronic
