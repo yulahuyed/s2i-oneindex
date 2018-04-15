@@ -3,6 +3,9 @@ FROM alpine:latest
 MAINTAINER Paul Schoenfelder <paulschoenfelder@gmail.com>
 # Modification France
 
+ENV DB_TYPE pgsql
+ENV DB_PORT 5432
+
 LABEL \
   # Location of the STI scripts inside the image
   io.openshift.s2i.scripts-url=image:///usr/libexec/s2i \
