@@ -2,10 +2,10 @@
 
 
 sed -i "s/pgsql/$DB_TYPE/g" /opt/app-root/src/public/tt-rss/config.php
-sed -i "s/localhost/$DB_HOST/g" /opt/app-root/src/public/tt-rss/config.php
-sed -i "s/yhiblog/$DB_USER/g" /opt/app-root/src/public/tt-rss/config.php
-sed -i "s/yhiblog/$DB_NAME/g" /opt/app-root/src/public/tt-rss/config.php
-sed -i "s/yhiblog/$DB_PASS/g" /opt/app-root/src/public/tt-rss/config.php
+sed -i "s/127.0.0.1/$DB_HOST/g" /opt/app-root/src/public/tt-rss/config.php
+sed -i "s/Uyhiblog/$DB_USER/g" /opt/app-root/src/public/tt-rss/config.php
+sed -i "s/Nyhiblog/$DB_NAME/g" /opt/app-root/src/public/tt-rss/config.php
+sed -i "s/Pyhiblog/$DB_PASS/g" /opt/app-root/src/public/tt-rss/config.php
 sed -i "s/5432/$DB_PORT/g" /opt/app-root/src/public/tt-rss/config.php
 sed -i "s#https://shui.azurewebsites.net/#$SELF_URL_PATH#g" /opt/app-root/src/public/tt-rss/config.php
 
