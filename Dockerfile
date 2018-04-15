@@ -90,7 +90,7 @@ RUN mkdir -p ${HOME} && \
         php7-posix \
         php7-session \
         php7-xml \
-        php7-pqsql \
+        php7-pgsql \
         php7-mbstring && \
         update-ca-certificates --fresh && \
     rm -rf /var/cache/apk/* && \
