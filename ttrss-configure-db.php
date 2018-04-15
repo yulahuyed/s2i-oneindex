@@ -4,7 +4,7 @@
 include '/opt/app-root/src/public/ttrss-utils.php';
 
 if (!env('TTRSS_PATH', ''))
-    $confpath = '/opt/app-root/src/public/tt-rss';
+    $confpath = '/opt/app-root/src/public/tt-rss/';
 $conffile = $confpath . 'config.php';
 
 $ename = 'DB';
