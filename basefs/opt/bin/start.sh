@@ -3,16 +3,8 @@
 if [ "${DB_USER}" ]
 then
 
-if [ "${DB_TYPE}" ]
-then
 sed -i "s/pgsql/$DB_TYPE/g" ${HOME}/public/tt-rss/config.php
-fi
-
-if [ "${DB_PORT}" ]
-then
 sed -i "s/5432/$DB_PORT/g" ${HOME}/public/tt-rss/config.php
-fi
-
 sed -i "s/127.0.0.1/$DB_HOST/g" ${HOME}/public/tt-rss/config.php
 sed -i "s/Uyhiblog/$DB_USER/g" ${HOME}/public/tt-rss/config.php
 sed -i "s/Nyhiblog/$DB_NAME/g" ${HOME}/public/tt-rss/config.php
