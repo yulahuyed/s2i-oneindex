@@ -128,7 +128,7 @@ USER 1001
 RUN git clone https://tt-rss.org/git/tt-rss.git /opt/app-root/src/public/tt-rss
 RUN git clone https://github.com/DigitalDJ/tinytinyrss-fever-plugin /opt/app-root/src/public/tt-rss/plugins.local/fever
 
-CMD ["base-usage"]
+CMD ["/opt/bin/start.sh"]
 
 # Set labels used in OpenShift to describe the builder images
 LABEL io.k8s.description="PHP 7 with Caddy Server on Alpine" \
