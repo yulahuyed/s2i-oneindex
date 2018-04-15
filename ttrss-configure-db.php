@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-include '/opt/app-root/src/public/ttrss-utils.php';
+include '/opt/app-root/src/public/tt-rss/ttrss-utils.php';
 
 if (!env('TTRSS_PATH', ''))
     $confpath = '/opt/app-root/src/public/tt-rss/';
