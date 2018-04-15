@@ -92,6 +92,7 @@ RUN mkdir -p ${HOME} && \
         php7-xml \
         php7-pgsql \
         php7-fileinfo \
+        php7-iconv \
         php7-mbstring \
         php7-pdo_pgsql && \
         update-ca-certificates --fresh && \
