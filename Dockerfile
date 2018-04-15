@@ -127,7 +127,7 @@ EXPOSE 8080
 
 # Directory with the sources is set as the working directory so all STI scripts
 # can execute relative to this path
-WORKDIR ${HOME}
+WORKDIR ${HOME}/public/tt-rss
 
 USER 1001
 
