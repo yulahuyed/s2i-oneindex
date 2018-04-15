@@ -91,7 +91,9 @@ RUN mkdir -p ${HOME} && \
         php7-session \
         php7-xml \
         php7-pgsql \
-        php7-mbstring && \
+        php7-fileinfo \
+        php7-mbstring \
+        php7-pdo_pgsql \
         update-ca-certificates --fresh && \
     rm -rf /var/cache/apk/* && \
     sed -i "s|;*date.timezone =.*|date.timezone = ${TIMEZONE}|i" /etc/php7/php.ini && \
