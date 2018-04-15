@@ -1,5 +1,8 @@
 #!/bin/bash
 
+if [ "${DB_USER}" ]
+then
+
 if [ "${DB_TYPE}" ]
 then
 sed -i "s/pgsql/$DB_TYPE/g" /opt/app-root/src/public/tt-rss/config.php
@@ -15,6 +18,9 @@ sed -i "s/Uyhiblog/$DB_USER/g" /opt/app-root/src/public/tt-rss/config.php
 sed -i "s/Nyhiblog/$DB_NAME/g" /opt/app-root/src/public/tt-rss/config.php
 sed -i "s/Pyhiblog/$DB_PASS/g" /opt/app-root/src/public/tt-rss/config.php
 sed -i "s#https://shui.azurewebsites.net/#$SELF_URL_PATH#g" /opt/app-root/src/public/tt-rss/config.php
+else
+rm /opt/app-root/src/public/tt-rss/config.php
+fi
 
 
 echo "*/5 * * * * php /opt/app-root/src/tt-rss/update.php --feeds --quiet" > /opt/app-root/src/public/tt-rss/crontab
