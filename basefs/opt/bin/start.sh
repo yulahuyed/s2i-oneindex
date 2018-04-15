@@ -20,7 +20,6 @@ sed -i "s/Pyhiblog/$DB_PASS/g" ${HOME}/public/tt-rss/config.php
 sed -i "s#https://shui.azurewebsites.net/#$SELF_URL_PATH#g" ${HOME}/public/tt-rss/config.php
 
 php -f ${HOME}/public/tt-rss/ttrss-configure-db.php
-php -f ${HOME}/public/tt-rss/ttrss-configure-plugin-mobilize.php
 
 else
 rm ${HOME}/public/tt-rss/config.php
