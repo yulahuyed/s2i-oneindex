@@ -90,6 +90,7 @@ RUN mkdir -p ${HOME} && \
         php7-posix \
         php7-session \
         php7-xml \
+        php7-pqsql \
         php7-mbstring && \
         update-ca-certificates --fresh && \
     rm -rf /var/cache/apk/* && \
@@ -123,6 +124,9 @@ EXPOSE 8080
 WORKDIR ${HOME}
 
 USER 1001
+
+RUN git clone https://tt-rss.org/git/tt-rss.git /opt/app-root/src/public/tt-rss
+RUN git clone https://github.com/DigitalDJ/tinytinyrss-fever-plugin /opt/app-root/src/public/tt-rss/plugins.local/fever
 
 CMD ["base-usage"]
 
