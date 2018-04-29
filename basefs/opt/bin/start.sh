@@ -1,25 +1,26 @@
 #!/bin/bash
 
-if [ "${DB_USER}" ]
+if [ "${OD_ID}" ]
 then
+sed -i "s/ea2b36f6-b8ad-40be-bc0f-e5e4a4a7d4fa/${OD_ID}/g" ${HOME}/public/oneindex/config.php
+sed -i "s/EIVCx5ztMSxMsga18MQ7rmGf9EIP7zv6tfimb0Kp5Uc=/${OD_SECRET}/g" ${HOME}/public/oneindex/config.php
+sed -i "s#https://ju.tn/onedrive-login#${OD_URI}#g" ${HOME}/public/oneindex/config.php
+fi
 
-sed -i "s/pgsql/$DB_TYPE/g" ${HOME}/public/tt-rss/config.php
-sed -i "s/5432/$DB_PORT/g" ${HOME}/public/tt-rss/config.php
-sed -i "s/127.0.0.1/$DB_HOST/g" ${HOME}/public/tt-rss/config.php
-sed -i "s/Uyhiblog/$DB_USER/g" ${HOME}/public/tt-rss/config.php
-sed -i "s/Nyhiblog/$DB_NAME/g" ${HOME}/public/tt-rss/config.php
-sed -i "s/Pyhiblog/$DB_PASS/g" ${HOME}/public/tt-rss/config.php
-sed -i "s#https://shui.azurewebsites.net/#$SELF_URL_PATH#g" ${HOME}/public/tt-rss/config.php
+if [ "${CACHE_EXPIRE}" ]
+then
+sed -i "s/=> 3600,/=> ${CACHE_EXPIRE},/g" ${HOME}/public/oneindex/config.php
+fi
 
-php -f ${HOME}/public/tt-rss/ttrss-configure-db.php
-
-else
-rm ${HOME}/public/tt-rss/config.php
+if [ "${CACHE_REFRESH}" ]
+then
+sed -i "s/=> 600,/=> ${CACHE_REFRESH},/g" ${HOME}/public/oneindex/config.php
 fi
 
 
-echo "*/5 * * * * php ${HOME}/public/tt-rss/update.php --feeds --quiet" > ${HOME}/public/tt-rss/crontab
-nohup ${HOME}/public/tt-rss/supercronic ${HOME}/public/tt-rss/crontab > /dev/null 2>&1 &
+echo "0 * * * * php ${HOME}/public/oneindex/one.php token:refresh" > ${HOME}/public/oneindex/crontab
+echo "*/10 * * * * php ${HOME}/public/oneindex/one.php cache:refresh" > ${HOME}/public/oneindex/crontab
+nohup ${HOME}/public/oneindex/supercronic ${HOME}/public/oneindex/crontab > /dev/null 2>&1 &
 
 # Creates the .env file needs by Laravel using
 # The environment variables set both by the system
