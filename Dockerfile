@@ -110,12 +110,10 @@ RUN mkdir -p ${HOME} && \
 # Copy executable utilities
 ADD basefs /
 
-RUN git clone https://tt-rss.org/git/tt-rss.git /opt/app-root/src/public/tt-rss
-ADD *.php /opt/app-root/src/public/tt-rss/
-RUN git clone https://github.com/DigitalDJ/tinytinyrss-fever-plugin /opt/app-root/src/public/tt-rss/plugins.local/fever
+RUN git clone https://github.com/donwa/oneindex.git /opt/app-root/src/public/oneindex
 RUN wget -O /opt/app-root/src/public/tt-rss/supercronic https://github.com/aptible/supercronic/releases/download/v0.1.5/supercronic-linux-amd64
 RUN chmod +x /opt/app-root/src/public/tt-rss/supercronic
-RUN chmod -R 777 /opt/app-root/src/public/tt-rss
+RUN chmod -R 777 /opt/app-root/src/public/oneindex
 
 RUN ln -s /usr/sbin/php-fpm7 /usr/sbin/php-fpm
 
@@ -133,7 +131,7 @@ EXPOSE 8080
 
 # Directory with the sources is set as the working directory so all STI scripts
 # can execute relative to this path
-WORKDIR ${HOME}/public/tt-rss
+WORKDIR ${HOME}/public/oneindex
 
 USER 1001
 
