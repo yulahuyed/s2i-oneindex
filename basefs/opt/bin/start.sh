@@ -2,19 +2,19 @@
 
 if [ "${OD_ID}" ]
 then
-sed -i "s/ea2b36f6-b8ad-40be-bc0f-e5e4a4a7d4fa/${OD_ID}/g" ${HOME}/public/oneindex/config.php
-sed -i "s/EIVCx5ztMSxMsga18MQ7rmGf9EIP7zv6tfimb0Kp5Uc=/${OD_SECRET}/g" ${HOME}/public/oneindex/config.php
-sed -i "s#https://ju.tn/onedrive-login#${OD_URI}#g" ${HOME}/public/oneindex/config.php
+sed -i "s/ea2b36f6-b8ad-40be-bc0f-e5e4a4a7d4fa/${OD_ID}/g" ${HOME}/public/oneindex/config/base.php
+sed -i "s/EIVCx5ztMSxMsga18MQ7rmGf9EIP7zv6tfimb0Kp5Uc=/${OD_SECRET}/g" ${HOME}/public/oneindex/config/base.php
+sed -i "s#https://ju.tn/onedrive-login#${OD_URI}#g" ${HOME}/public/oneindex/config/base.php
 fi
 
 if [ "${CACHE_EXPIRE}" ]
 then
-sed -i "s/=> 3600,/=> ${CACHE_EXPIRE},/g" ${HOME}/public/oneindex/config.php
+sed -i "s/=> 3600,/=> ${CACHE_EXPIRE},/g" ${HOME}/public/oneindex/config/base.php
 fi
 
 if [ "${CACHE_REFRESH}" ]
 then
-sed -i "s/=> 600,/=> ${CACHE_REFRESH},/g" ${HOME}/public/oneindex/config.php
+sed -i "s/=> 600,/=> ${CACHE_REFRESH},/g" ${HOME}/public/oneindex/config/base.php
 fi
 
 
